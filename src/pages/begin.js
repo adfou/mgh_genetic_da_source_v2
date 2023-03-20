@@ -13,7 +13,7 @@ import { setHTML } from "../helpers";
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    initializeMenu: (drupalMenu) => {
+    initializeMenu: (drupalMenu ) => {
       dispatch( initializeMenu(drupalMenu) );
     },
     setLang: (lang) => {
@@ -23,8 +23,7 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 const Begin = ({ data, initializeMenu }) => {
-  const drupalMenu = useDrupalMenu();
-  console.log( data)
+  const drupalMenu = useDrupalMenu("en");
   const fields = data.english;
   return (
     <div onLoad={ initializeMenu(drupalMenu) }>

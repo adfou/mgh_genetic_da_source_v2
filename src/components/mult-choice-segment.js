@@ -20,7 +20,21 @@ const mapDispatchToProps = (dispatch) => {
 
 const MultChoiceSegment = ({ content, savedInput, setTestInput }) => {
   const type = content.field_can_choose_multiple ? "checkbox" : "radio";
-  const name = urlify(content.relationships.field_relevance.name);
+  var name ="test-types";
+  if (content.relationships.field_relevance != undefined){
+  name = urlify(content.relationships.field_relevance.name);
+  console.log(name)
+  }
+  else {
+    if (content.field_option_name[0] == "Hablar con mi oncólogo"){name = "not-ready-to-decide"}
+    if (content.field_option_name[0] == "Sí, quiero las pruebas genéticas"){name = "do-you-want-genetic-test"}
+    if (content.field_option_name[0] == "Prueba A. Prueba del gen del cáncer pancreático" || content.field_option_name[0] == "Prueba A. Prueba del gen del cáncer de ovario" ){
+    name = "test-types";
+    }
+    //name = "not-ready-to-decide"
+    
+  }
+  
   return (
     <Form>
       { content.field_intro_to_options && <p>{ content.field_intro_to_options }</p> }
