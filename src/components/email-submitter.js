@@ -59,7 +59,6 @@ class EmailSubmitter extends Component {
         body: json
       })
       .then( (response) => {
-        console.log(response);
         this.setState({ 
           confirm: true,
           message: "Your email was sent"

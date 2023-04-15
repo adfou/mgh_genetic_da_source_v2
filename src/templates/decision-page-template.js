@@ -13,7 +13,7 @@ import Footer from "../components/footer";
 
 
 const mapStateToProps = (state) => {
-  
+  //console.log(state.user)
   return {
     cancerType: state.user.cancerType.toLowerCase()
   }
@@ -21,7 +21,9 @@ const mapStateToProps = (state) => {
 
 const DecisionPageTemplate = ({ data, cancerType }) => {
   const node = data.nodeDecisionAidPage;
-  console.log('--------------------')
+  console.log('---------data-----------')
+  console.log(data)
+  console.log('---------node-----------')
   console.log(node)
   return (
     <Layout className={ `decision-page ${ cancerType }` }>

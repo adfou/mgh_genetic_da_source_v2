@@ -5,6 +5,7 @@ import DAModal from "./da-modal";
 import ValuesContent from "./values-content";
 import VideoContent from "../components/video-content";
 import SummaryContent from "./summary-content";
+import SummaryContentES from "./summary-content-es";
 import AccordionContent from "../components/accordion-content";
 import ContentModule from "./content-module";
 import ContentContainer from "./content-container";
@@ -22,6 +23,9 @@ const PageBody = ({ page, video, videoCaption, intro, outro, complexContent, can
   const vidUrl = getContent(video, "field_video");
   const vidPlaceholder = getContent(video, "field_video_still_image");
   page = page.slice(1);
+  
+    
+
   return (
     <Container>
       <VideoContent 
@@ -38,6 +42,14 @@ const PageBody = ({ page, video, videoCaption, intro, outro, complexContent, can
             <SummaryContent>
               <ContentModule content={ complexContent } />
             </SummaryContent>
+          : 
+          <ContentModule content={ complexContent } />
+        }
+        { 
+          page === "mi-resumen" ?
+            <SummaryContentES>
+              <ContentModule content={ complexContent } />
+            </SummaryContentES>
           : 
           <ContentModule content={ complexContent } />
         }
