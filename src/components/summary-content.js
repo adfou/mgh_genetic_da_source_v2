@@ -28,6 +28,7 @@ const SummaryContent = ({ user, children }) => {
             leftLabel={ value.leftLabel }
             rightLabel={ value.rightLabel }
             value={ value.value }
+            lang= {'eng'}
           />
         );
       })}
