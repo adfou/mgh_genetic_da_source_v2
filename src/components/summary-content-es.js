@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import Card from "react-bootstrap/Card";
 import SummaryValue from "./summary-value";
 import TestDecision from "./test-decision";
-import EmailSubmitter from "./email-submitter";
+import EmailSubmitterES from "./email-submitter-es";
 
 const mapStateToProps = (state) => {
   return {
@@ -57,10 +57,10 @@ const SummaryContentES = ({ user, children }) => {
       <Card bsPrefix="card my-5 summary-email-card">
         <Card.Body>
           <Card.Text as="div">
-            <p>Provide your email address to receive a copy of your responses and notes:</p>
-            <EmailSubmitter type="user" data={ user } notes={ user.notes }>
-              Email summary
-            </EmailSubmitter>
+            <p>Proporcione su dirección de correo electrónico para recibir una copia de sus respuestas y notas:</p>
+            <EmailSubmitterES type="user" data={ user } notes={ user.notes }>
+              Resumen de correo electrónico
+            </EmailSubmitterES>
           </Card.Text>
         </Card.Body>
       </Card>
